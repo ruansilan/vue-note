@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<div></div>
+<body>
+<script type="module">
+  import {Observer} from "./Observer.js";
+  import { Watcher } from "./Watcher.js"
+  const person = {
+    name:"text",
+    age:12,
+    obj:{
+        test:1
+    }
+  }
+  // new Observer([1,2,3])
+  new Observer(person);
+  new Watcher(person,'obj.test',()=>{console.log('监听到了')})
+  // person.age = 15;
+  // person.age = 19;
+</script>
+</body>
+</html>
